@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Payment</title>
+    <script>
+    function paymentValid()
+    {
+        var cvv=document.forms["payment"]["cvv"];
+        if(cvv.value=="")
+        {
+          window.alert("Enter CVV");
+          cvv.focus();
+          return false;
+        }
+  return true;
+    }
+    </script>
+</head>
+<body>
+ <h1 style="color: red;">Select a payment method</h1>
+ <form action="order.html" name="payment" onsubmit="return paymentValid()">
+    <div style="font-size: 23px;">
+ <input type="radio" name="payment"/>Rupay ****1939<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Akash<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Expires 03/2026<br> 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="Enter CVV" name="cvv"/>
+<hr width="30%" align="left">
+<input type="radio" name="payment"/>Amazon Pay UPI-Paytm Payments Bank<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;******39
+    <hr width="30%" align="left">
+    <input type="radio" name="payment"/>UPI<br>
+    <hr width="30%" align="left">
+    <input type="radio" name="payment"/>Add Debit/Credit/ATM card<br>
+    <hr width="30%" align="left">
+    <input type="radio" name="payment"/>Net Banking<br>
+    <hr width="30%" align="left">
+    <input type="radio" name="payment"/>Pay on Delivery<br>
+    <hr width="30%" align="left"><br><br>
+    <input type="button" onclick="order.html" style="background-color:rgb(226, 204, 80); height: 30px; width: 300px;" value="Continue">
+</div>
+</form>
+</body>
+</html>

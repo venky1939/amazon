@@ -1,0 +1,71 @@
+<html>
+<head>
+<title> Payment</title>
+<script>
+function paymentValid()
+{
+
+var bank=document.forms["payment"]["bank"];
+var date=document.forms["payment"]["date"];
+var cvv=document.forms["payment"]["cvv"];
+var name=document.forms["payment"]["name"];
+
+if (bank.value == "default")                           
+    { 
+        window.alert("Please choose your bank."); 
+        bank.focus(); 
+        return false; 
+    } 
+    
+if(date.value == "")
+{
+    window.alert("Enter Expiry date");
+    date.focus();
+    return false;
+}
+
+if(cvv.value=="")
+{
+window.alert("Enter CVV");
+cvv.focus();
+return false;
+}
+if(name.value=="")
+{
+window.alert("Enter your name");
+name.focus();
+return false;
+}
+
+return true;
+}
+</script>
+</head>
+<body>
+
+<h1><FONT COLOR="PURPLE">WELCOME TO PAYMENT SECTION</FONT></H1><br>
+<form action="order.html"name="payment"onsubmit="return paymentValid()">
+Select Your card:
+<select name="bank">
+<option value="default">default</option>
+<option value="Andhra Bank">Andhra Bank</option>
+<option value="State Bank">State Bank</option>
+<option value="Central Bank">Central Bank</option>
+<option value="Kotak Bank">Kotak Bank</option>
+<option value="HDFC Bank">HDFC Bank</option>
+<option value="Canara Bank">Canara  Bank</option>
+</select><br><br>
+Enter Expiry date:<input type="date" name="date" placeholder="DD/MM/YYYY">
+<br><br>
+Enter CVV:<input type="text"name="cvv"size="3">
+<br>
+<br>
+Enter Your Name on card:<input type="text"name="name">
+<br><br>
+<input type="submit"name="submit"value="Submit">
+<input type="reset"name="canel"value="Cancel">
+</form>
+</body>
+</html>
+
+
